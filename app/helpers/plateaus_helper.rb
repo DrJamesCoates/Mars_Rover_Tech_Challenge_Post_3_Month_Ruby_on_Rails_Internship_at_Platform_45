@@ -1,0 +1,2 @@
+module PlateausHelper
+end

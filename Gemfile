@@ -28,9 +28,30 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
+group :test do
+  # fixtures replacement
+  gem 'factory_bot_rails', '~> 4.0'
+
+  # adds more matchers
+  gem 'shoulda-matchers', '~> 3.1'
+
+  # used to generate fake data
+  gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+
+  # cleans test database
+  gem 'database_cleaner'
+
+end
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+
+  # for rspec testing
+  gem 'rspec-rails', '~> 4.0'
+
+  # for troubleshooting
+  gem 'pry'
 end
 
 group :development do
@@ -45,4 +66,4 @@ group :development do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+# gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
