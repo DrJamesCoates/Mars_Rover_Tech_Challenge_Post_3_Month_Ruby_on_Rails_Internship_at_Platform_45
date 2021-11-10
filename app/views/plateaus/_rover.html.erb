@@ -3,4 +3,7 @@
   <p style="text-align: left; padding-bottom: 0px;">
     Heading: <%= rover.heading %> | <i>Coordinates: <%= rover.x_coordinate %>, <%= rover.y_coordinate %></i>
   </p>
+  <p style="text-align: left; padding-bottom: 0px;">
+    <%= link_to "Edit", edit_plateau_rover_url(plateau_id: params[:id], id: rover.id) %> | <%= link_to "Destroy", plateau_rover_url(plateau_id: rover.plateau.id, id: rover.id), method: :delete, data: { confirm: "Are you sure?" } %>
+  </p>
 </li>

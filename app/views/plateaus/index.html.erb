@@ -2,10 +2,10 @@
 
 <div class="row">
   <h1>All Plateaus</h1>
-  <h3 style="text-align: center;"><%= link_to "New plateau", new_plateau_path %></h3>
-  <h4 style="padding-left: 15px; text-align: center;"><i>Total plateaus: <%= @plateaus.count %></i></h4>
+  <h4 style="text-align: center;"><%= link_to "New plateau", new_plateau_path %></h4>
+  <p style="padding-left: 15px; text-align: center;"><i>Total plateaus: <%= @plateaus.count %></i></p>
   <% if @plateaus.count > 0 %>
-    <div class="col-md-12" style="text-align:center;">
+    <div class="col-md-12" style="text-align:center; border-top: 1px solid;">
       <%= render partial: 'plateau', collection: @plateaus, as: :plateau %>
     </div>
   <% end %>

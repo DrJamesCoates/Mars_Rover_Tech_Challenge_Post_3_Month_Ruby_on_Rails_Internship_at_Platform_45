@@ -1,0 +1,40 @@
+<% provide(:title, "Edit Plateau") %>
+
+<h1>Edit plateau</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+
+    <p><i>Edit the plateau name or the coordinates for the top right corner of the plateau</i></p>
+
+    <%= form_with(url: plateau_url(@plateau), method: :patch, local: true) do |form| %>
+
+      <%= form.label :name %>
+      <%= 
+        form.text_field :name, 
+        placeholder: @plateau.name, 
+        value: @plateau.name, 
+        class: "form-control" 
+      %>
+
+      <%= form.label :top_right_x_coordinate %>
+      <%= 
+        form.text_field :top_right_x_coordinate, 
+        placeholder: "#{@plateau.top_right_x_coordinate}", 
+        value: @plateau.top_right_x_coordinate, 
+        class: "form-control" 
+      %>
+
+      <%= form.label :top_right_y_coordinate %>
+      <%= 
+        form.text_field :top_right_y_coordinate, 
+        placeholder: "#{@plateau.top_right_y_coordinate}", 
+        value: @plateau.top_right_y_coordinate, 
+        class: "form-control" 
+      %>
+
+      <%= form.submit "Update Plateau", class: "btn btn-primary" %>
+
+    <% end %>
+  
+  </div>
+</div>

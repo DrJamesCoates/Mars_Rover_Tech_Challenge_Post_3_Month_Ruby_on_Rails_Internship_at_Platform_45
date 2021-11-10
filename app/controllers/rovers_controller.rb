@@ -16,6 +16,7 @@ class RoversController < ApplicationController
   end
 
   def edit
+    @rover = Rover.find_by(id: params[:id])
   end
 
   def update

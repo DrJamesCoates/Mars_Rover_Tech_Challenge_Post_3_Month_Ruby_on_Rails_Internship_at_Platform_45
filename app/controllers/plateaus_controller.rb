@@ -24,6 +24,7 @@ class PlateausController < ApplicationController
   end
 
   def edit
+    @plateau = Plateau.find_by(id: params[:id])
   end
 
   def update
@@ -32,6 +33,7 @@ class PlateausController < ApplicationController
       flash[:success] = "Plateau updated!"
       redirect_to @plateau
     else
+      @plateau = Plateau.find_by(id: params[:id])
       flash.now[:danger] = "Could not update plateau"
       render 'edit'
     end
