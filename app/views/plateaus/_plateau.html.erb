@@ -1,0 +1,11 @@
+<li style="list-style: none;">
+  <h2><%= link_to "#{plateau.name}", plateau_path(plateau) %></h2>
+  <h3>Active rovers: <%= plateau.rovers.count %></h3>
+  <h4><i>
+    <% if plateau.explored == true %>
+      Explored 
+    <% else %>
+      Exploring
+    <% end %>
+  </i></h4>
+</li>

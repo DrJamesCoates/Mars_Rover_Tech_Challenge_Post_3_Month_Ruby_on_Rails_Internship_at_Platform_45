@@ -5,7 +5,7 @@ class RoversController < ApplicationController
 
   def create
     @plateau = Plateau.find_by(id: params[:plateau_id])
-    @rover = @plateau.rovers.build(rover_params)
+    @rover = @plateau.rovers.build(final_params(rover_params[:name]))
     if @rover.save
       flash[:success] = "Rover created!"
       redirect_to @plateau
@@ -38,7 +38,14 @@ class RoversController < ApplicationController
 
   private
   def rover_params
-    params.permit(:name, :x_coordinate, :y_coordinate, :heading, :plateau_id)
+    params.permit(:name)
+  end
+
+  def final_params(rover_name)
+    x_coordinate = (0..@plateau.top_right_x_coordinate).to_a.sample
+    y_coordinate = (0..@plateau.top_right_y_coordinate).to_a.sample
+    heading = ["N", "E", "S", "W"].sample
+    { name: rover_name, x_coordinate: x_coordinate, y_coordinate: y_coordinate, heading: heading }
   end
 
 end

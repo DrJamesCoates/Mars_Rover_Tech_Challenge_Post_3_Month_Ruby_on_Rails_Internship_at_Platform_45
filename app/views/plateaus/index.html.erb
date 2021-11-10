@@ -1,0 +1,14 @@
+<% provide(:title, "All Plateaus") %>
+
+<div class="row">
+  <h1>All Plateaus</h1>
+  <h3 style="text-align: center;"><%= link_to "New plateau", new_plateau_path %></h3>
+  <h4 style="padding-left: 15px; text-align: center;"><i>Total plateaus: <%= @plateaus.count %></i></h4>
+  <% if @plateaus.count > 0 %>
+    <div class="col-md-12" style="text-align:center;">
+      <%= render partial: 'plateau', collection: @plateaus, as: :plateau %>
+    </div>
+  <% end %>
+
+  <div class="col-md-12" style="text-align:center;"><%= will_paginate %></div>
+</div>

@@ -16,9 +16,11 @@ class PlateausController < ApplicationController
   end
 
   def show
+    @plateau = Plateau.find_by(id: params[:id])
   end
 
   def index
+    @plateaus = Plateau.paginate(page: params[:page], per_page: 2 )
   end
 
   def edit

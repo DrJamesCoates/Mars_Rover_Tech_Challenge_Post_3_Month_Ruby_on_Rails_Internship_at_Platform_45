@@ -1,0 +1,39 @@
+<header class="navabr navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <%= link_to "Mars Rover App", root_path, id: "logo" %>
+    <nav>
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed"
+                                      data-toggle="collapse"
+                                      data-target="#bs-example-navbar-collapse-1"
+                                      aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <ul class="nav navbar-nav navbar-right collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <li><%= link_to "Home", root_path %></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            Plateaus <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "New plateau", new_plateau_path %></li>
+            <li><%= link_to "All plateaus", plateaus_path %></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            Rovers <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "New rover", '#' %></li>
+            <li><%= link_to "All rovers", '#' %></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,20 @@
+<% provide(:title, "New Rover") %>
+
+<h1>New Rover</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+
+    <p><i>Decide on the rover name, and the rover will be dropped onto the plateau</i></p>
+
+    <%= form_with(url: plateau_rovers_url, local: true) do |form| %>
+
+      <%= form.label :name %>
+      <%= form.text_field :name, class: "form-control" %>
+
+      <%= form.submit "Create Rover", class: "btn btn-primary" %>
+
+    <% end %>
+  
+  </div>
+</div>
