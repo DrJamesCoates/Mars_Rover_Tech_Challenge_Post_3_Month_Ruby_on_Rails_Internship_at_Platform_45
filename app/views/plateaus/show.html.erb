@@ -3,6 +3,11 @@
 <div class="row">
   <aside class="col-md-4">
     <h1 style="text-align: left;"><%= @plateau.name %></h1>
+    <% if @plateau.explored == true %>
+      <p style="text-align: left; padding-bottom: 0px; font-size: 1.6em;"><%= link_to "Explored", plateau_url(id: @plateau.id, explored: false), method: :patch, id: "explored" %></p>
+    <% else %>
+      <p style="text-align: left; padding-bottom: 0px; font-size: 1.6em;"><%= link_to "Exploring", plateau_url(id: @plateau.id, explored: true), method: :patch, id: "unexplored" %></p>
+    <% end %>
     <h3 style="text-align: left;">breadth: <%= @plateau.top_right_x_coordinate %> | length: <%= @plateau.top_right_y_coordinate %></h3>
     <p style="text-align: left; padding-bottom: 0px;"><%= link_to "Edit", edit_plateau_path(@plateau)%></p>
     <p style="text-align: left; padding-bottom: 0px;"><%= link_to "Delete", plateau_path(@plateau), method: :delete, data: { confirm: "Are you sure?" } %></p>

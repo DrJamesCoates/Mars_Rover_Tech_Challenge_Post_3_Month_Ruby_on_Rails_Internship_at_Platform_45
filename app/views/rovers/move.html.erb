@@ -1,0 +1,17 @@
+<% provide(:title, "Move Rover") %>
+
+<h1>Move rover</h1>
+<p><i>Type in your movement instruction below</i></p>
+<p><i>An instruction must be either one of 'L', 'R' or 'M'</i></p>
+<p><i>Our systems will stop your rover from going over the edge of the plateau</i></p>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+
+    <%= form_with(url: plateau_rover_url, method: :patch, local: true) do |form| %>
+  
+    <% end %>
+
+  </div>
+</div>
+

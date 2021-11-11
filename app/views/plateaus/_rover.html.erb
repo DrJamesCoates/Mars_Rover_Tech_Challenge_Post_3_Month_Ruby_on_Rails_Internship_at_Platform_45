@@ -1,9 +1,14 @@
 <li>
-  <h2><%= rover.name %></h2>
-  <p style="text-align: left; padding-bottom: 0px;">
-    Heading: <%= rover.heading %> | <i>Coordinates: <%= rover.x_coordinate %>, <%= rover.y_coordinate %></i>
-  </p>
-  <p style="text-align: left; padding-bottom: 0px;">
-    <%= link_to "Edit", edit_plateau_rover_url(plateau_id: params[:id], id: rover.id) %> | <%= link_to "Destroy", plateau_rover_url(plateau_id: rover.plateau.id, id: rover.id), method: :delete, data: { confirm: "Are you sure?" } %>
-  </p>
+  <div class="col-md-8">
+    <h2><%= rover.name %></h2>
+    <p style="text-align: left; padding-bottom: 0px;">
+      Heading: <%= rover.heading %> | <i>Coordinates: <%= rover.x_coordinate %>, <%= rover.y_coordinate %></i>
+    </p>
+    <p style="text-align: left; padding-bottom: 0px;">
+      <%= link_to "Edit", edit_plateau_rover_url(plateau_id: params[:id], id: rover.id) %> | <%= link_to "Destroy", plateau_rover_url(plateau_id: rover.plateau.id, id: rover.id), method: :delete, data: { confirm: "Are you sure?" } %>
+    </p>
+  </div>
+  <div class="col-md-4" style="padding-top: 30px; text-align: center;">
+    <%= link_to "move", '#' %>
+  </div>
 </li>
