@@ -1,9 +1,9 @@
 
 FactoryBot.define do
   factory :plateau do
-    name { Faker::Address.country }
-    top_right_x_coordinate { Faker::Number.number(digits: 10) }
-    top_right_y_coordinate { Faker::Number.number(digits: 10) }
+    name { "Youth in Asia" }
+    top_right_x_coordinate { 15 }
+    top_right_y_coordinate { 14 }
     explored { false }
   end
 end

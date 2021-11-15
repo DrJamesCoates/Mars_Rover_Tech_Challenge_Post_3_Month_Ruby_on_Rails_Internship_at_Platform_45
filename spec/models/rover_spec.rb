@@ -11,7 +11,7 @@ RSpec.describe Rover, type: :model do
   it { should validate_exclusion_of(:heading).in_array(%w(a..z)) }
   # test values are only uppercase
 
-  # test values for coordinates are only in range of plateau coordinates for top right coordinates
+  
   it { should validate_presence_of(:x_coordinate) }
   it { should validate_numericality_of(:x_coordinate).only_integer }
   it { should validate_presence_of(:y_coordinate) }

@@ -7,5 +7,8 @@ Rails.application.routes.draw do
   resources :plateaus do
     resources :rovers
   end
+
+  get '/move_rover', to: 'rovers#move'
+  patch '/update_position', to: 'rovers#update_position'
   
 end

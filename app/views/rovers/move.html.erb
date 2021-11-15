@@ -8,8 +8,15 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
 
-    <%= form_with(url: plateau_rover_url, method: :patch, local: true) do |form| %>
-  
+    <%= form_with(url: update_position_url, method: :patch, local: true) do |form| %>
+
+      <%= form.hidden_field :id, value: params[:id] %>
+
+      <%= form.label :movement_instruction %>
+      <%= form.text_field :movement_instruction, class: "form-control" %>
+
+      <%= form.submit "Send movement instructions", class: "btn btn-primary" %>
+    
     <% end %>
 
   </div>
