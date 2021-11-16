@@ -10,7 +10,7 @@ class PlateausController < ApplicationController
       flash[:success] = "Plateau created!"
       redirect_to @plateau
     else
-      flash.now[:danger] = "Could not create plateau"
+      flash.now[:danger] = @plateau.errors.full_messages[0]
       render 'new'
     end
   end
@@ -20,7 +20,8 @@ class PlateausController < ApplicationController
   end
 
   def index
-    @plateaus = Plateau.paginate(page: params[:page], per_page: 2 )
+    @plateaus = Plateau.paginate(page: params[:page], per_page: 5 )
+    @plateaus_count = @plateaus.count
   end
 
   def edit

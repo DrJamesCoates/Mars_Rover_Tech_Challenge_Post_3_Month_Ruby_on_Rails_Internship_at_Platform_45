@@ -13,7 +13,8 @@ RSpec.describe "Plateaus", type: :request do
       { name: nil, top_right_x_coordinate: 10, top_right_y_coordinate: 8, explored: false },
       { name: "Valid name", top_right_x_coordinate: nil, top_right_y_coordinate: 8, explored: false },
       { name: "Valid name", top_right_x_coordinate: 10, top_right_y_coordinate: nil, explored: false },
-      { name: "Valid name", top_right_x_coordinate: 10, top_right_y_coordinate: 8, explored: nil }
+      { name: "Valid name", top_right_x_coordinate: 10, top_right_y_coordinate: 8, explored: nil },
+      { name: "Valid name", top_right_x_coordinate: 10, top_right_y_coordinate: 10, explored: true }
     ]
   end
 
@@ -33,13 +34,39 @@ RSpec.describe "Plateaus", type: :request do
     end
 
     context "with incorrect plateau attributes" do
-      it "does not create a plateau and it renders an error message" do
+      it "does not create a plateau and it renders an error message related to blank name" do
         old_plateau_count = Plateau.count
-        invalid_params.each do |invalid_params_hash|
-          post '/plateaus', params: invalid_params_hash
-          expect(Plateau.count).to eq(old_plateau_count)
-          expect(flash[:danger]).to eq('Could not create plateau')
-        end
+        post '/plateaus', params: invalid_params[0]
+        expect(Plateau.count).to eq(old_plateau_count)
+        expect(flash[:danger]).to eq("Name can't be blank")
+      end
+
+      it "does not create a plateau and it renders an error message related to absent top right x coordinate" do
+        old_plateau_count = Plateau.count
+        post '/plateaus', params: invalid_params[1]
+        expect(Plateau.count).to eq(old_plateau_count)
+        expect(flash[:danger]).to eq("Top right x coordinate can't be blank")
+      end
+
+      it "does not create a plateau and it renders an error message related to absent top right y coordinate" do
+        old_plateau_count = Plateau.count
+        post '/plateaus', params: invalid_params[2]
+        expect(Plateau.count).to eq(old_plateau_count)
+        expect(flash[:danger]).to eq("Top right y coordinate can't be blank")
+      end
+
+      it "does not create a plateau and it renders an error message related to explored status" do
+        old_plateau_count = Plateau.count
+        post '/plateaus', params: invalid_params[3]
+        expect(Plateau.count).to eq(old_plateau_count)
+        expect(flash[:danger]).to eq("Explored is not included in the list")
+      end
+
+      it "does not create a plateau and it renders an error message related to top right coordinates being equal" do
+        old_plateau_count = Plateau.count
+        post '/plateaus', params: invalid_params[4]
+        expect(Plateau.count).to eq(old_plateau_count)
+        expect(flash[:danger]).to eq("Plateau must be a rectangel: top right x and y coordinates cannot be equal!")
       end
     end
   end

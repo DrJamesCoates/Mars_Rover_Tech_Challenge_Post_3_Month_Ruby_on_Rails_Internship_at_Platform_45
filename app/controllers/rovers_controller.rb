@@ -10,7 +10,7 @@ class RoversController < ApplicationController
       flash[:success] = "Rover created!"
       redirect_to @plateau
     else
-      flash.now[:danger] = "Could not create rover"
+      flash.now[:danger] = @rover.errors.full_messages[0]
       render 'new'
     end
   end
@@ -38,17 +38,19 @@ class RoversController < ApplicationController
   end
 
   def move
-    @rover_id = params[:id]
+    @rover = Rover.find_by(id: params[:id])
+    @plateau = Plateau.find_by(id: @rover.plateau_id)
   end
 
   def update_position
     @movement_instructions_array = process_movement_instructions(params[:movement_instruction])
+    @rover = Rover.find_by(id: params[:id])
+    @plateau = Plateau.find_by(id: @rover.plateau_id)
     unless check_movement_instructions(@movement_instructions_array)
       flash[:danger] = "Incorrect movement instructions!"
       render 'move'
       return
     end
-    @rover = Rover.find_by(id: params[:id])
     updated_position = adjust_heading_and_position(@rover.x_coordinate, @rover.y_coordinate, @rover.heading, @movement_instructions_array)
     if @rover.update(updated_position)
       flash[:success] = "Rover moved successfully!"

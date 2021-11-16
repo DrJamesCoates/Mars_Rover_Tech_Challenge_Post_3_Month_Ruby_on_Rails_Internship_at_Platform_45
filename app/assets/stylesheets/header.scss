@@ -2,13 +2,28 @@
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #fff;
+  color: #ff5435;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
+  padding-left: 10px;
   font-weight: bold;
   &:hover {
-    color: #fff;
+    color: #cc1e2c;
     text-decoration: none;
   }
+}
+
+#header_link {
+  color: #ff5435;
+  font-weight: bold;
+  letter-spacing: -1px;
+  font-size: 1.2em;
+  &:hover {
+    color: #cc1e2c;
+  }
+}
+
+#header_bar {
+  background-color: #241721;
 }

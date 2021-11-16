@@ -1,0 +1,67 @@
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+  &#plateau_show_info {
+    text-align: left; 
+    padding-left: 10px;
+  }
+}
+
+#heading {
+  text-align: center; 
+}
+
+#explored_h4 {
+  font-size: 0.8em;
+  color: #2a5e0c;
+  padding-bottom: 20px;
+}
+
+#exploring_h4 {
+  font-size: 0.8em;
+  color: #ec0404;
+  padding-bottom: 20px;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+  text-align: center;
+  padding-bottom: 1em;
+  &#rover_partial_info, &#rover_move {
+    padding-left: 0px;
+  }
+  &#plateau_show, &#plateau_show_info {
+    padding-left: 10px;
+  }
+  &#rover_move {
+    text-align: right;
+  }
+  &#rover_partial_info, &#plateau_show_info, &#plateau_show, &#plateau_action_link, &#rover_partial_link {
+    text-align: left;
+  }
+  &#instructions, &#plateau_show_info, &#plateau_show, &#rover_partial_info, &#rover_move, &#plateau_action_link, &#plateau_index_info, &#rover_partial_link {
+    padding-bottom: 0px;
+  }
+  &#plateau_show {
+    font-size: 1.6em; 
+  }
+  &#plateau_show_info {
+    font-size: 20px;
+  }
+  &#rover_partial_info {
+    padding-top: 0px;
+  }
+}
+
+#rover_partial {
+  padding-left: 15px;
+  padding-bottom: 0px;
+}
+
+#plateau_index_link {
+  text-align: center; 
+  padding-bottom: 30px;
+}

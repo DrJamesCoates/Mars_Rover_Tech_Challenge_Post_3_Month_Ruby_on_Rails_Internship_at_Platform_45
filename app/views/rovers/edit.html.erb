@@ -11,14 +11,9 @@
     <%= form_with(url: plateau_rover_url, method: :patch, local: true) do |form| %>
 
       <%= form.label :name %>
-      <%= 
-        form.text_field :name, 
-        placeholder: @rover.name, 
-        value: @rover.name, 
-        class: "form-control" 
-      %>
+      <%= form.text_field :name, placeholder: @rover.name, value: @rover.name, class: "form-control" %>
 
-      <%= form.submit "Update Rover", class: "btn btn-primary" %>
+      <%= form.submit "Update Rover", class: "btn btn-primary", id: "form_button" %>
 
     <% end %>
   

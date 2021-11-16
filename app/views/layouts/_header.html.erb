@@ -1,4 +1,4 @@
-<header class="navabr navbar-fixed-top navbar-inverse">
+<header class="navabr navbar-fixed-top navbar-inverse" id="header_bar">
   <div class="container">
     <%= link_to "Mars Rover App", root_path, id: "logo" %>
     <nav>
@@ -14,9 +14,9 @@
         </button>
       </div>
       <ul class="nav navbar-nav navbar-right collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "All plateaus", plateaus_path %></li>
-        <li><%= link_to "New plateau", new_plateau_path %></li>
+        <li><%= link_to "Home", root_path, id: "header_link" %></li>
+        <li><%= link_to "New plateau", new_plateau_path, id: "header_link" %></li>
+        <li><%= link_to "All plateaus", plateaus_path, id: "header_link" %></li>
       </ul>
     </nav>
   </div>

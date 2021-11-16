@@ -2,22 +2,27 @@
 
 <div class="row">
   <aside class="col-md-4">
-    <h1 style="text-align: left;"><%= @plateau.name %></h1>
+    <h1 id="plateau_show_info"><%= @plateau.name %></h1>
+    <p id="plateau_show_info">Top right x coordinate: <%= @plateau.top_right_x_coordinate %></p>
+    <p id="plateau_show_info">Top right y coordinate: <%= @plateau.top_right_y_coordinate %></h3>
     <% if @plateau.explored == true %>
-      <p style="text-align: left; padding-bottom: 0px; font-size: 1.6em;"><%= link_to "Explored", plateau_url(id: @plateau.id, explored: false), method: :patch, id: "explored" %></p>
+      <p id="plateau_show"><%= link_to "Explored", plateau_url(id: @plateau.id, explored: false), method: :patch, id: "explored" %></p>
     <% else %>
-      <p style="text-align: left; padding-bottom: 0px; font-size: 1.6em;"><%= link_to "Exploring", plateau_url(id: @plateau.id, explored: true), method: :patch, id: "unexplored" %></p>
+      <p id="plateau_show"><%= link_to "Exploring", plateau_url(id: @plateau.id, explored: true), method: :patch, id: "unexplored" %></p>
     <% end %>
-    <h3 style="text-align: left;">breadth: <%= @plateau.top_right_x_coordinate %> | length: <%= @plateau.top_right_y_coordinate %></h3>
-    <p style="text-align: left; padding-bottom: 0px;"><%= link_to "Edit", edit_plateau_path(@plateau)%></p>
-    <p style="text-align: left; padding-bottom: 0px;"><%= link_to "Delete", plateau_path(@plateau), method: :delete, data: { confirm: "Are you sure?" } %></p>
+    <div class="col-md-2">
+      <p id="plateau_action_link" style="padding-left: 0px;"><%= link_to "Edit", edit_plateau_path(@plateau), id: "form_link" %></p>
+    </div>
+    <div class="col-md-1">
+      <p id="plateau_action_link"><%= link_to "Delete", plateau_path(@plateau), method: :delete, data: { confirm: "Are you sure?" }, id: "form_link" %></p>
+    </div>
   </aside>
   <div class="col-md-8">
-    <h2 style="text-align: left; padding-left: 40px;"><i>Active rovers: <%= @plateau.rovers.count %></i></h2>
-    <h4 style="text-align: left; padding-left: 40px;"><%= link_to "Add rover", new_plateau_rover_path(plateau_id: @plateau.id) %></h4>
+    <h2 id="heading"><i>Active rovers: <%= @plateau.rovers.count %></i></h2>
+    <h4 id="heading"><%= link_to "Add rover", new_plateau_rover_path(plateau_id: @plateau.id), id: "form_link" %></h4>
     <% if @plateau.rovers.count > 0 %>
-      <div class="col-md-12", style="border-top: 1px solid;">
-        <ul style="list-style: none; padding-left: 20px;">
+      <div class="col-md-12", id="list_div">
+        <ul id="standard_list">
           <%= render partial: 'rover', collection: @plateau.rovers, as: :rover %>
         </ul>
       </div>

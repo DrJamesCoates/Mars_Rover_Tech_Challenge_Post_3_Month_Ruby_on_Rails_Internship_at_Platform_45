@@ -1,16 +1,15 @@
 #explored {
   font-size: 0.8em;
-  color: #52bb15;
+  color: #000000;
   border-style: solid;
-  border-color: #76f84e;
-  border-width: 1px;
+  border-color: #000000;
+  border-width: 2px;
   border-radius: 10px;
   padding: 5px;
   &:hover {
     text-decoration: none;
-    font-size: 0.9em;
-    color: #d51a1f;
-    border-color: #f05f64;
+    color: #ff5435;
+    border-color: #ff5435;
   }
 }
 
@@ -18,14 +17,13 @@
   font-size: 0.8em;
   color: #000000;
   border-style: solid;
-  border-color: #4e4014;
-  border-width: 1px;
+  border-color: #000000;
+  border-width: 2px;
   border-radius: 10px;
   padding: 5px;
   &:hover {
     text-decoration: none;
-    font-size: 0.9em;
-    color: #d51a1f;
-    border-color: #f05f64;
+    color: #ff5435;
+    border-color: #ff5435;
   }
 }

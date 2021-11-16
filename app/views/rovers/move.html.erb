@@ -1,12 +1,23 @@
 <% provide(:title, "Move Rover") %>
 
-<h1>Move rover</h1>
-<p><i>Type in your movement instruction below</i></p>
-<p><i>An instruction must be either one of 'L', 'R' or 'M'</i></p>
-<p><i>Our systems will stop your rover from going over the edge of the plateau</i></p>
-
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
+  <aside class="col-md-3">
+    <h2><%= link_to "#{@plateau.name}", @plateau, id: "show_link" %></h2>
+    <p id="rover_move" style="text-align: left;">Top right x coordinate: <%= @plateau.top_right_x_coordinate%></p>
+    <p id="rover_move" style="text-align: left;">Top right y coordinate: <%= @plateau.top_right_y_coordinate%></p>
+  </aside>
+  <aside class="col-md-3" style="float: right;">
+    <h2 style="text-align: right;"><%= @rover.name %></h2>
+    <p id="rover_move">Heading: <%= @rover.heading%></p>
+    <p id="rover_move">x coordinate: <%= @rover.x_coordinate%></p>
+    <p id="rover_move">y coordinate: <%= @rover.y_coordinate%></p>
+  </aside>
+  <div class="col-md-6">
+
+    <h1>Move rover</h1>
+    <p id="instructions"><i>Type in your movement instruction below</i></p>
+    <p id="instructions"><i>An instruction must be either one of 'L', 'R' or 'M'</i></p>
+    <p><i>Our systems will stop your rover from going over the edge of the plateau</i></p>
 
     <%= form_with(url: update_position_url, method: :patch, local: true) do |form| %>
 
@@ -15,7 +26,7 @@
       <%= form.label :movement_instruction %>
       <%= form.text_field :movement_instruction, class: "form-control" %>
 
-      <%= form.submit "Send movement instructions", class: "btn btn-primary" %>
+      <%= form.submit "Send movement instructions", class: "btn btn-primary", id: "form_button" %>
     
     <% end %>
 

@@ -1,14 +1,17 @@
 <li>
   <div class="col-md-8">
-    <h2><%= rover.name %></h2>
-    <p style="text-align: left; padding-bottom: 0px;">
-      Heading: <%= rover.heading %> | <i>Coordinates (x, y): <%= rover.x_coordinate %>, <%= rover.y_coordinate %></i>
-    </p>
-    <p style="text-align: left; padding-bottom: 0px;">
-      <%= link_to "Edit", edit_plateau_rover_url(plateau_id: params[:id], id: rover.id) %> | <%= link_to "Destroy", plateau_rover_url(plateau_id: rover.plateau.id, id: rover.id), method: :delete, data: { confirm: "Are you sure?" } %>
-    </p>
+    <h2 id="rover_partial"><%= rover.name %></h2>
+    <div class="col-md-4">
+      <p id="rover_partial_info"><i>Heading: <%= rover.heading %></i></p>
+      <p id="rover_partial_info"><i>x coordinate: <%= rover.x_coordinate %></i></p>
+      <p id="rover_partial_info"><i>y coordinate: <%= rover.y_coordinate %></i></p>
+    </div>
+    <div class="col-md-2">
+      <p id="rover_partial_link"><%= link_to "Edit", edit_plateau_rover_url(plateau_id: params[:id], id: rover.id), id: "form_link" %></p>
+      <p id="rover_partial_link"><%= link_to "Destroy", plateau_rover_url(plateau_id: rover.plateau.id, id: rover.id), method: :delete, data: { confirm: "Are you sure?" }, id: "form_link" %></p>
+    </div>
   </div>
-  <div class="col-md-4" style="padding-top: 30px; text-align: center;">
-    <%= link_to "move", move_rover_url(id: rover.id) %>
+  <div class="col-md-4" id="move_div">
+    <%= link_to "MOVE", move_rover_url(id: rover.id), id: "form_link" %>
   </div>
 </li>

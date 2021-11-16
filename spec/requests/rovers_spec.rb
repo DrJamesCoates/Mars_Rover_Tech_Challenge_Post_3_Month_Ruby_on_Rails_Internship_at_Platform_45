@@ -30,7 +30,7 @@ RSpec.describe "Rovers", type: :request do
       it "flashes an error message and does not create a rover" do
         old_rover_count = Rover.count
         post "/plateaus/#{plateau.id}/rovers", params: invalid_attributes
-        expect(flash[:danger]).to eq("Could not create rover")
+        expect(flash[:danger]).to eq("Name can't be blank")
         expect(Rover.count).to eq(old_rover_count)
       end
     end

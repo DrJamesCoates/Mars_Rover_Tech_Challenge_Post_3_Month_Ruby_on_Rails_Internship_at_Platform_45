@@ -9,30 +9,15 @@
     <%= form_with(url: plateau_url(@plateau), method: :patch, local: true) do |form| %>
 
       <%= form.label :name %>
-      <%= 
-        form.text_field :name, 
-        placeholder: @plateau.name, 
-        value: @plateau.name, 
-        class: "form-control" 
-      %>
+      <%= form.text_field :name, placeholder: @plateau.name, value: @plateau.name, class: "form-control" %>
 
       <%= form.label :top_right_x_coordinate %>
-      <%= 
-        form.text_field :top_right_x_coordinate, 
-        placeholder: "#{@plateau.top_right_x_coordinate}", 
-        value: @plateau.top_right_x_coordinate, 
-        class: "form-control" 
-      %>
+      <%= form.text_field :top_right_x_coordinate, placeholder: "#{@plateau.top_right_x_coordinate}", value: @plateau.top_right_x_coordinate, class: "form-control" %>
 
       <%= form.label :top_right_y_coordinate %>
-      <%= 
-        form.text_field :top_right_y_coordinate, 
-        placeholder: "#{@plateau.top_right_y_coordinate}", 
-        value: @plateau.top_right_y_coordinate, 
-        class: "form-control" 
-      %>
+      <%= form.text_field :top_right_y_coordinate, placeholder: "#{@plateau.top_right_y_coordinate}", value: @plateau.top_right_y_coordinate, class: "form-control" %>
 
-      <%= form.submit "Update Plateau", class: "btn btn-primary" %>
+      <%= form.submit "Update Plateau", class: "btn btn-primary", id: "form_button" %>
 
     <% end %>
   

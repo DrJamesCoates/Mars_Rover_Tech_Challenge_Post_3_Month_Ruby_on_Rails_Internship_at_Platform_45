@@ -2,13 +2,13 @@
 
 <div class="row">
   <h1>All Plateaus</h1>
-  <h4 style="text-align: center;"><%= link_to "New plateau", new_plateau_path %></h4>
-  <p style="padding-left: 15px; text-align: center;"><i>Total plateaus: <%= @plateaus.count %></i></p>
-  <% if @plateaus.count > 0 %>
-    <div class="col-md-12" style="text-align:center; border-top: 1px solid;">
+  <p id="plateau_index_info">Total plateaus: <%= @plateaus_count %></p>
+  <h4 id="plateau_index_link"><%= link_to "New plateau", new_plateau_path, id: "form_link" %></h4>
+  <% if @plateaus_count > 0 %>
+    <div class="col-md-12" id="list_div" style="text-align:center;">
       <%= render partial: 'plateau', collection: @plateaus, as: :plateau %>
     </div>
   <% end %>
 
-  <div class="col-md-12" style="text-align:center;"><%= will_paginate %></div>
+  <div class="col-md-12" id="pagination"><%= will_paginate %></div>
 </div>

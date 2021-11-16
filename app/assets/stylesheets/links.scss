@@ -1,0 +1,25 @@
+#show_link {
+  color: #000000;
+  &:hover {
+    color: #ff5435;
+    text-decoration: none;
+  }
+}
+
+#form_link {
+  color: #ff5435;
+  &:hover {
+    color: #cc1e2c;
+    text-decoration: none;
+  }
+}
+
+#move_div {
+  padding-top: 30px;
+  text-align: center;
+  font-weight: bold;
+}
+
+#pagination {
+  text-align: center;
+}
