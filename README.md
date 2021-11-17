@@ -95,7 +95,7 @@ This web application was designed according to RESTful architecture, in that obj
       
       
 ## Future refactoring
-### I consider the following as important refactoring considerations:
+### The following is what I would consider important in future refactoring:
       - Paginating rovers on the plateau show view
       - Refactoring the movement instruction implementation methods
       - User login and authentication system with sessions
