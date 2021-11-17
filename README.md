@@ -90,7 +90,7 @@ This web application was designed according to RESTful architecture, in that obj
 ## Deployment instructions
 ### You can start the rails server by executing the command below:
       rails s
-#### You will then be able to visit the site using the URL: 
+### You will then be able to visit the site using the URL: 
       http://localhost:3000
       
       
