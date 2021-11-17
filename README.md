@@ -24,6 +24,8 @@ This web application was designed according to RESTful architecture, in that obj
 ### The following gems were used to create this app:
     ruby 3.0.2p107
     Rails 6.1.4.1
+    yarn 1.22.17
+    
     sqlite 1.4.2
     puma 5.5.2
     bootstrap-sass 3.4.1
